@@ -209,6 +209,6 @@ setInterval(function auto() {
 //MEHSKIP
 setInterval(function(){ mehskip();}, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.9003");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9001.working");
 
 });
