@@ -7,7 +7,7 @@ $(".header-right-navigation").append($('<div class="yt-import"><img src="http://
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
 
-var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, autoCounter = 0,  currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = "";
+var i = 0, mehskipx = 0, skip = 0, skipuser = 0, uservotes = 0, autoCounter = 0,  currentUser = "", votedisabled = true, inAutoQueue = false, commandoption = ""; 
 
 //Functions
 function getChatMessage(msg){
@@ -17,7 +17,7 @@ function getChatMessage(msg){
 	amsghtml = amsghtml.replace("<p>","");
 	amsghtml = amsghtml.replace("</p>"," ");
 	amsghtml = amsghtml.replace('<a href="#" class="username">'+user+'</a>', '');
-	//console.log(amsghtml);
+	console.log(amsghtml);
 	return amsghtml;
 	}
 function getChatUser(user){
@@ -27,7 +27,7 @@ function getChatUser(user){
 		return user.children().children(".username").html();
 	}else{ return currentUser; }
 	}
-function getCommandOptions(message){
+function getCommandOptions(message){ 	
 	var msg = message;
 	var msgarray = msg.split(" ");
 	$.each(msgarray, function(index, value){
@@ -39,7 +39,7 @@ function getCommandOptions(message){
 			return commandoption;
 		}
 	})
-	//console.log(commandoption);
+	console.log(commandoption);
 	}
 function getTotalUser(){ return $(".room-user-counter").html(); }
 function postMsg(msg){
@@ -124,7 +124,7 @@ function joinQueue(){ $(".play-song-link").trigger("click"); setTimeout(function
 function pauseQueue(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".pause-queue").trigger("click");},5000); setTimeout(function(){$(".close-browser").trigger("click");},1000) }
 function resumeQueue(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".pause-queue").trigger("click");},5000); setTimeout(function(){$(".close-browser").trigger("click");},1000) }
 function queuePlaylist(){ $(".display-browser").trigger("click"); setTimeout(function(){$(".playlist-564f9473bd566d23009ab305").trigger("click");},1000); setTimeout(function(){$(".queue-playlist").trigger("click");},500); setTimeout(function(){$(".close-browser").trigger("click");},5000); }
-function tooLong(){
+function tooLong(){ 
 	var mins = $(".min").html();
 	var status = true;
 	mins.replace('"', '');
@@ -139,29 +139,16 @@ function autoJoinQueue(){ var total = getTotalUser();  if(total < 5){inAutoQueue
 function getRandomGIF(){ var gifurl = $.getJSON("https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC"); return gifurl; }
 function getTagGIF(t){ var tag = t; tag = tag.replace(" ", "+");var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+tag; var gifurl = $.getJSON(url); return gifurl; }
 
-
-/*$('ul.chat-main').on('DOMNodeInserted', function(){
-	var now = new Date();
-	var hours = now.getHours();
-	var minutes = now.getMinutes();
-	var seconds = now.getSeconds();
-	var timenow = hours + " " + minutes + " " + seconds;
-	console.log($(this).attr('class'));
-	console.log(timenow);
-	console.log("----------------------------------");
-})*/
-document.addEventListener('DOMNodeInserted', function (evt) { console.log(evt.target + ' inserted under parent ' + evt.relatedNode); }, false);
-
 //Command-Input
+$('body').on('DOMNodeInserted', 'ul.chat-main', function(){ console.log("first message!"); })
 $('body').on('DOMNodeInserted', 'div.text', function(){
-
+	
 	/*autoJoinQueue();
 	if(inAutoQueue == true && i == 0){ joinQueue(); i++;}*/
-
+		
 	var msg = getChatMessage($(this)), user = getChatUser($(this)), now = new Date($.now());
-
-	//console.log(user);
-	if(user != "hero" && user != "cyberpixlcraft"){
+	console.log(user);
+	if(user != "hero" && user != "cyberpixlcraft"){	
 
 	//Commands + function-calls
 	var msgoption = getCommandOptions(msg);
@@ -169,7 +156,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 		if(msg.search('back') >= 0){ welcome(user); }
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
 		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
-
+		
 		//if(msg.search('!') >=0){
 			if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
 			if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
@@ -205,8 +192,8 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	});//end of commands function
 
 //BEGINNING OF AUTO FUNCTION
-setInterval(function auto() {
-	//console.log(autoCounter);
+setInterval(function auto() { 
+	console.log(autoCounter);
 	if(autoCounter >= 5) {autoCounter = 0;}
 	if(autoCounter == 4) {rules();}
 	if(autoCounter == 3) {lastfm();}
@@ -219,6 +206,6 @@ setInterval(function auto() {
 //MEHSKIP
 setInterval(function(){ mehskip();}, 4200);
 //END MEHSKIP
-console.log("UpcomingHero succesfully loaded! V42.420.1337.14");
+console.log("UpcomingHero succesfully loaded! V42.420.1337.9003");
 
 });
