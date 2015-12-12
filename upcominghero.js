@@ -151,7 +151,7 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	if(user != "hero" && user != "cyberpixlcraft"){	
 	var msgoption = getCommandOptions(msg);
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
-		if(msg.search('i'm back') >= 0 || msg.search('im back') >= 0){ wb(user); }
+		if(msg.search('i'm back') >= 0){ wb(user); }
 		if(msg.search('!search') >= 0 && commandoption.length > 0){ postMsg("https://en.wikipedia.org/wiki/"+commandoption); }
 		if(msg.search('!rules') >= 0){ postMsg("Read the rules on our website: http://upcomingrecords.com/rules/");}
 		if(msg.search('!tooLong') >= 0){ tooLong();}
