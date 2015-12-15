@@ -67,6 +67,9 @@ function yolo(){
 	var chatmsg = "Swag";
 	postMsg(chatmsg);
 	}
+function refresh(){
+	window.location.reload(true);
+	}	
 function fb(){
 	var chatmsg = "/me | Make sure to like us on Facebook! https://www.facebook.com/UpcomingRecords";
 	postMsg(chatmsg);
@@ -196,7 +199,10 @@ setInterval(function auto() {
 	console.log(autoCounter);
 	if(user != "hero" && user != "cyberpixlcraft") //Make sure no spam!
 	{
-	if(autoCounter >= 5) {autoCounter = 0;}
+	if(autoCounter >= 5) {
+	autoCounter = 0;
+	refresh();
+	}
 	if(autoCounter == 4) {rules();}
 	if(autoCounter == 3) {lastfm();}
 	if(autoCounter == 2) {website();}
