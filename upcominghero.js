@@ -155,7 +155,8 @@ $('body').on('DOMNodeInserted', 'div.text', function(){
 	//Commands + function-calls
 	var msgoption = getCommandOptions(msg);
 		if(msg.search('!love') >= 0 || msg.search('love') >= 0 || msg.search(':heart:') >= 0 || msg.search('<3') >= 0){ love(); }
-		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg('https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg'); }
+		if(msg.search('</3') >= 0){ postMsg("</3 love is NOT in the air </3"); }
+		if(msg.search('!racist') >= 0 || msg.search('nigger') >= 0 || msg.search('niggur') >= 0 || msg.search('neger') >= 0 || msg.search('melon') >= 0 || msg.search('kfc') >= 0){ postMsg("https://i.ytimg.com/vi/3AzfIhs2-zo/hqdefault.jpg"); }
 		if(msg.search('m back') >= 0){ wb(user); }
 		//if(msg.search('!') >=0){
 			//if(msg.search('!calc') >= 0){ calculate(); }
