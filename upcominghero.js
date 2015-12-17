@@ -1,5 +1,5 @@
 $(document).ready(function(){
-$(".player_container").remove();
+//$(".player_container").remove();
 
 //Config-Menu
 /*$("body").prepend('<link rel="stylesheet" type="text/css" href="https://rawgit.com/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/master/yt-importer.css">');
