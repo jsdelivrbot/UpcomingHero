@@ -79,7 +79,7 @@ function lastfm(){
 	postMsg(chatmsg);
 	}
 function website(){
-	var chatmsg = "/me | Make sure to visit our website! http://www.UpcomingRecords.com";
+	var chatmsg = "/me | @djs Press [control + D] in order to favorite this room! Also, make sure to visit our website! http://www.UpcomingRecords.com";
 	postMsg(chatmsg);
 	}
 	function rules(){
