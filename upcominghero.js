@@ -2,7 +2,7 @@ $(document).ready(function(){
 //$(".player_container").remove();
 
 //Config-Menu
-/*$("body").prepend('<link rel="stylesheet" type="text/css" href="https://rawgit.com/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/master/yt-importer.css">');
+/*$("body").prepend('<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Cr4fTeXe/Dubtrack-YT-Playlist-Importer/yt-importer.css">');
 $(".header-right-navigation").append($('<div class="yt-import"><img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Settings-2-icon.png" alt="import"></div>'));
 $("body").append($('<div class="import-input"><div class="import-inner"><span class="importer-title">Chat-Bot "Hero" by Cr4fTeXe</span></br>Work in Progress</div></div>'));
 */
